@@ -805,7 +805,7 @@ function generateImage(obj)
 	//object.setAttribute("material"	, obj.material);
 	object.setAttribute("src"		, "#"+id);
 	object.setAttribute("href"		, obj.url);
-	object.setAttribute("target"	, obj.target);
+	object.setAttribute("target"	, "_blank");
 
 	return object;
 }
@@ -819,7 +819,7 @@ function generatePlane(obj)
 	addAsset(img);
 
 	var object 	= document.createElement(obj.type);
-	object.setAttribute("rotation"	, obj.rotation);
+	object.setAttribute("rotation"	, "-90 0 0");
 	object.setAttribute("width"		, obj.width);
 	object.setAttribute("height"	, obj.height);
 	object.setAttribute("src"		, "#"+id);
@@ -912,30 +912,28 @@ function generateText(obj)
 	var object 	= document.createElement('a-entity');
 	object.setAttribute("text-geometry"	, "value: "+obj.title+"; font: #optimerBoldFont");
 	object.setAttribute("position"		, "-1.3 .3 -.3");
-	object.setAttribute("rotation"		, obj.rotation);
-	object.setAttribute("material"		, obj.material);
+	object.setAttribute("rotation"		, "-90 0 0");
+	object.setAttribute("material"		, "color:white;");
 
-	
-
-	/*
 	var object1	= document.createElement('a-entity');
 	object1.setAttribute("text"	, 		"width: 3; align:center; letterSpacing: 5; color: white; value: "+obj.text);
 	object1.setAttribute("position"		, "0 0 .3");
-	object1.setAttribute("rotation"		, obj.rotation);
+	object1.setAttribute("rotation"		, "-90 0 0");
 
 	var plane	= document.createElement('a-plane');
 	plane.setAttribute("position"	, "-.5 -.5 0");
 	plane.setAttribute("src"		, "#fondo");
 	plane.setAttribute("width"		, "4.5");
 	plane.setAttribute("height"		, "2.5");
-	plane.setAttribute("rotation"	, obj.rotation);
-
+	plane.setAttribute("rotation"	,"-90 0 0");
+	//plane.setAttribute("href"		, obj.url);
+	//plane.setAttribute("target"		, obj.target);
 
 	var button = generateButton(obj,1.7);
-	*/
 
 	//return [object,object1,plane].concat(button);
-	return [object];
+
+	return object;
 }
 
 function generateButton(obj,pos)
@@ -946,14 +944,14 @@ function generateButton(obj,pos)
 	object.setAttribute("title"		, "probando");
 	object.setAttribute("width"		, "1");
 	object.setAttribute("height"	, ".5");
-	object.setAttribute("rotation"	, obj.rotation);
+	object.setAttribute("rotation"	, "-90 0 0");
 	object.setAttribute("href"		, obj.url);
-	object.setAttribute("target"	, obj.target);
+	object.setAttribute("target"	, "_blank");
 
 	var object1	= document.createElement('a-entity');
 	object1.setAttribute("text"	, 		"width: 3; align:center;color: white; value: Apunta aqui");
 	object1.setAttribute("position"		, "-.3 -.25 "+pos);
-	object1.setAttribute("rotation"		, obj.rotation);
+	object1.setAttribute("rotation"		, "-90 0 0");
 
 	return [object,object1];
 }
@@ -963,9 +961,9 @@ function getJSON()
 	//console.log('getJSON...');
 
 	return new Promise((resolve, reject) =>{
-		$.getJSON("json/test.json", function( data )
+		$.getJSON( "json/test.json", function( data )
 		{
-			console.log(data);
+			//console.log(data);
 			for(var pat in data)
 			{
 				if(data[pat].object)
