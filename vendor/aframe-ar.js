@@ -915,6 +915,9 @@ function generateText(obj)
 	object.setAttribute("rotation"		, obj.rotation);
 	object.setAttribute("material"		, obj.material);
 
+	
+
+	/*
 	var object1	= document.createElement('a-entity');
 	object1.setAttribute("text"	, 		"width: 3; align:center; letterSpacing: 5; color: white; value: "+obj.text);
 	object1.setAttribute("position"		, "0 0 .3");
@@ -926,12 +929,13 @@ function generateText(obj)
 	plane.setAttribute("width"		, "4.5");
 	plane.setAttribute("height"		, "2.5");
 	plane.setAttribute("rotation"	, obj.rotation);
-	//plane.setAttribute("href"		, obj.url);
-	//plane.setAttribute("target"		, obj.target);
+
 
 	var button = generateButton(obj,1.7);
+	*/
 
-	return [object,object1,plane].concat(button);
+	//return [object,object1,plane].concat(button);
+	return [object];
 }
 
 function generateButton(obj,pos)
