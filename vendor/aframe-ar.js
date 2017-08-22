@@ -933,7 +933,7 @@ function generateText(obj)
 
 	//return [object,object1,plane].concat(button);
 
-	return object;
+	return plane;
 }
 
 function generateButton(obj,pos)
