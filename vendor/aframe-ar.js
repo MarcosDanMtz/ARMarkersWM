@@ -915,6 +915,8 @@ function generateText(obj)
 	object.setAttribute("rotation"		, obj.rotation);
 	object.setAttribute("material"		, obj.material);
 
+	
+
 	/*
 	var object1	= document.createElement('a-entity');
 	object1.setAttribute("text"	, 		"width: 3; align:center; letterSpacing: 5; color: white; value: "+obj.text);
