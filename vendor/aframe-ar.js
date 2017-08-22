@@ -933,7 +933,10 @@ function generateText(obj)
 
 	//return [object,object1,plane].concat(button);
 
-	return plane;
+	var object 	= document.createElement('a-box');
+	object.setAttribute("position"	, '0 0.5 0');
+	object.setAttribute("material"	, 'opacity: 0.5; side:double; color:red;');
+	return object;
 }
 
 function generateButton(obj,pos)
